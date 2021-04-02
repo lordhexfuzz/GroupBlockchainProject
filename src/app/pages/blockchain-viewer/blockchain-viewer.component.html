@@ -1,4 +1,11 @@
 <div class="container">
     <h1>Blocks on Chain</h1>
     <p>Each card is a block on the chain. If you click on a block you can see the transactions for that block.</p>
+
+    <app-block-view>
+        *ngFor="let block of blocks" 
+		[block]="block" 
+		[selectedBlock]="selectedBlock"
+		(click)="showTransactions(block)"
+    </app-block-view>
 </div>
